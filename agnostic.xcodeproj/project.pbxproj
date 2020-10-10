@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1A1597A72532442600EFBD55 /* Timing.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A1597A52532442600EFBD55 /* Timing.c */; };
-		1A1597A82532442600EFBD55 /* Timing.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A1597A62532442600EFBD55 /* Timing.h */; };
+		1A1597A82532442600EFBD55 /* Timing.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A1597A62532442600EFBD55 /* Timing.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1AB37B692532496D00C58DAB /* Timing.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A1597A52532442600EFBD55 /* Timing.c */; };
-		1AB37B6A2532496F00C58DAB /* Timing.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A1597A62532442600EFBD55 /* Timing.h */; };
+		1AB37B6A2532496F00C58DAB /* Timing.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A1597A62532442600EFBD55 /* Timing.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -184,7 +184,9 @@
 				GCC_MODEL_TUNING = G5;
 				INSTALL_PATH = /usr/local/lib;
 				PREBINDING = NO;
+				PRIVATE_HEADERS_FOLDER_PATH = /usr/local/include/agnostic;
 				PRODUCT_NAME = agnostic;
+				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/agnostic;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -212,7 +214,9 @@
 				EXECUTABLE_PREFIX = lib;
 				GCC_MODEL_TUNING = G5;
 				INSTALL_PATH = /usr/local/lib;
+				PRIVATE_HEADERS_FOLDER_PATH = /usr/local/include/agnostic;
 				PRODUCT_NAME = agnostic;
+				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/agnostic;
 			};
 			name = Release;
 		};
