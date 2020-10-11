@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'agnostic' target in the 'agnostic' project.
+//
+
+#ifdef __OBJC__
+    // There is no cocoa
+#endif
