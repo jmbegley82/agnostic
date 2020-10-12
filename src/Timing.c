@@ -5,7 +5,10 @@
 #include <unistd.h>
 #include <time.h>
 
-#if !defined CLOCK_MONOTONIC_RAW
+#if defined __MACH__
+#include <mach/mach.h>
+#include <mach/clock.h>
+#elif !defined CLOCK_MONOTONIC_RAW
 #include <sys/time.h>
 #endif // ndef CLOCK_MONOTONIC_RAW
 
@@ -17,7 +20,16 @@ double GetTimeInMsec() {
 
 double GetTimeInUsec() {
 	double retval = 0;
-#if defined CLOCK_MONOTONIC_RAW
+#if defined __MACH__
+	//mach-specific code follows
+	clock_serv_t cclock;
+	mach_timespec_t mts;
+	host_get_clock_service(mach_host_self(), REALTIME_CLOCK, &cclock);
+	clock_get_time(cclock, &mts);
+	mach_port_deallocate(mach_task_self(), cclock);
+	retval = mts.tv_sec * 1000000.0;
+	retval += mts.tv_nsec / 1000.0;
+#elif defined CLOCK_MONOTONIC_RAW
 	//linux-specific code follows
 	struct timespec currentTime;
 	clock_gettime(CLOCK_MONOTONIC_RAW, &currentTime);
