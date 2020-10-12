@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A344BCE2533F22F00BE2F32 /* Filesystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A344BCC2533F22F00BE2F32 /* Filesystem.cpp */; };
+		1A344BCF2533F22F00BE2F32 /* Filesystem.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A344BCD2533F22F00BE2F32 /* Filesystem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1A4BCFEE25338F6E009372FE /* Timing.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A4BCFEC25338F6E009372FE /* Timing.c */; };
 		1A4BCFEF25338F6E009372FE /* Timing.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A4BCFED25338F6E009372FE /* Timing.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
@@ -17,6 +19,8 @@
 		0867D6A5FE840307C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		1A344BCC2533F22F00BE2F32 /* Filesystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Filesystem.cpp; path = src/Filesystem.cpp; sourceTree = "<group>"; };
+		1A344BCD2533F22F00BE2F32 /* Filesystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Filesystem.h; path = src/Filesystem.h; sourceTree = "<group>"; };
 		1A4BCFEC25338F6E009372FE /* Timing.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = Timing.c; path = src/Timing.c; sourceTree = "<group>"; };
 		1A4BCFED25338F6E009372FE /* Timing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Timing.h; path = src/Timing.h; sourceTree = "<group>"; };
 		32DBCF5E0370ADEE00C91783 /* agnostic_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = agnostic_Prefix.pch; sourceTree = "<group>"; };
@@ -47,6 +51,8 @@
 		0867D691FE84028FC02AAC07 /* agnostic */ = {
 			isa = PBXGroup;
 			children = (
+				1A344BCC2533F22F00BE2F32 /* Filesystem.cpp */,
+				1A344BCD2533F22F00BE2F32 /* Filesystem.h */,
 				1A4BCFEC25338F6E009372FE /* Timing.c */,
 				1A4BCFED25338F6E009372FE /* Timing.h */,
 				08FB77AEFE84172EC02AAC07 /* Classes */,
@@ -117,6 +123,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A4BCFEF25338F6E009372FE /* Timing.h in Headers */,
+				1A344BCF2533F22F00BE2F32 /* Filesystem.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A4BCFEE25338F6E009372FE /* Timing.c in Sources */,
+				1A344BCE2533F22F00BE2F32 /* Filesystem.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
