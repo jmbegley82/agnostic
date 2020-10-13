@@ -23,9 +23,9 @@
 		1A344BCD2533F22F00BE2F32 /* Filesystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Filesystem.h; path = src/Filesystem.h; sourceTree = "<group>"; };
 		1A4BCFEC25338F6E009372FE /* Timing.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = Timing.c; path = src/Timing.c; sourceTree = "<group>"; };
 		1A4BCFED25338F6E009372FE /* Timing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Timing.h; path = src/Timing.h; sourceTree = "<group>"; };
-		32DBCF5E0370ADEE00C91783 /* agnostic_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = agnostic_Prefix.pch; sourceTree = "<group>"; };
+		32DBCF5E0370ADEE00C91783 /* Agnostic_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Agnostic_Prefix.pch; sourceTree = "<group>"; };
 		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8DC2EF5B0486A6940098B216 /* agnostic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = agnostic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DC2EF5B0486A6940098B216 /* Agnostic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Agnostic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F7E79907B2D74100F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -43,12 +43,12 @@
 		034768DFFF38A50411DB9C8B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8DC2EF5B0486A6940098B216 /* agnostic.framework */,
+				8DC2EF5B0486A6940098B216 /* Agnostic.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0867D691FE84028FC02AAC07 /* agnostic */ = {
+		0867D691FE84028FC02AAC07 /* Agnostic */ = {
 			isa = PBXGroup;
 			children = (
 				1A344BCC2533F22F00BE2F32 /* Filesystem.cpp */,
@@ -61,7 +61,7 @@
 				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
 				034768DFFF38A50411DB9C8B /* Products */,
 			);
-			name = agnostic;
+			name = Agnostic;
 			sourceTree = "<group>";
 		};
 		0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */ = {
@@ -110,7 +110,7 @@
 		32C88DFF0371C24200C91783 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				32DBCF5E0370ADEE00C91783 /* agnostic_Prefix.pch */,
+				32DBCF5E0370ADEE00C91783 /* Agnostic_Prefix.pch */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -130,9 +130,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		8DC2EF4F0486A6940098B216 /* agnostic */ = {
+		8DC2EF4F0486A6940098B216 /* Agnostic */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1DEB91AD08733DA50010E9CD /* Build configuration list for PBXNativeTarget "agnostic" */;
+			buildConfigurationList = 1DEB91AD08733DA50010E9CD /* Build configuration list for PBXNativeTarget "Agnostic" */;
 			buildPhases = (
 				8DC2EF500486A6940098B216 /* Headers */,
 				8DC2EF520486A6940098B216 /* Resources */,
@@ -143,10 +143,10 @@
 			);
 			dependencies = (
 			);
-			name = agnostic;
+			name = Agnostic;
 			productInstallPath = "$(HOME)/Library/Frameworks";
-			productName = agnostic;
-			productReference = 8DC2EF5B0486A6940098B216 /* agnostic.framework */;
+			productName = Agnostic;
+			productReference = 8DC2EF5B0486A6940098B216 /* Agnostic.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -154,15 +154,15 @@
 /* Begin PBXProject section */
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "agnostic" */;
+			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "Agnostic" */;
 			compatibilityVersion = "Xcode 3.1";
 			hasScannedForEncodings = 1;
-			mainGroup = 0867D691FE84028FC02AAC07 /* agnostic */;
+			mainGroup = 0867D691FE84028FC02AAC07 /* Agnostic */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8DC2EF4F0486A6940098B216 /* agnostic */,
+				8DC2EF4F0486A6940098B216 /* Agnostic */,
 			);
 		};
 /* End PBXProject section */
@@ -215,10 +215,10 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = agnostic_Prefix.pch;
+				GCC_PREFIX_HEADER = Agnostic_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = /Library/Frameworks;
-				PRODUCT_NAME = agnostic;
+				PRODUCT_NAME = Agnostic;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -233,10 +233,10 @@
 				FRAMEWORK_VERSION = A;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = agnostic_Prefix.pch;
+				GCC_PREFIX_HEADER = Agnostic_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = /Library/Frameworks;
-				PRODUCT_NAME = agnostic;
+				PRODUCT_NAME = Agnostic;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
@@ -270,7 +270,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1DEB91AD08733DA50010E9CD /* Build configuration list for PBXNativeTarget "agnostic" */ = {
+		1DEB91AD08733DA50010E9CD /* Build configuration list for PBXNativeTarget "Agnostic" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB91AE08733DA50010E9CD /* Debug */,
@@ -279,7 +279,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "agnostic" */ = {
+		1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "Agnostic" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB91B208733DA50010E9CD /* Debug */,
