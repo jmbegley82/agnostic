@@ -61,9 +61,9 @@ all:	bin doc
 install:bin
 	install -d $(DESTDIR)$(PREFIX)/lib
 	install -m 644 $(BUILD_DIR)/libagnostic.$(STLIBEXT) $(DESTDIR)$(PREFIX)/lib/
-	install -d $(DESTDIR)$(PREFIX)/include/libagnostic
-	install -m 644 src/Filesystem.h $(DESTDIR)$(PREFIX)/include/libagnostic/
-	install -m 644 src/Timing.h $(DESTDIR)$(PREFIX)/include/libagnostic/
+	install -d $(DESTDIR)$(PREFIX)/include/Agnostic
+	install -m 644 src/Filesystem.h $(DESTDIR)$(PREFIX)/include/Agnostic/
+	install -m 644 src/Timing.h $(DESTDIR)$(PREFIX)/include/Agnostic/
 
 .PHONY:	clean
 
