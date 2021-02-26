@@ -1,0 +1,72 @@
+CC          ?= cc
+CXX         ?= c++
+MKDIR_P     ?= mkdir -p
+CFLAGS      ?=
+CXXFLAGS    ?=
+CPPFLAGS    ?=
+LDFLAGS     ?=
+LIBS        ?=
+LDFLAGS     ?=
+LIBTOOL     ?= libtool
+
+BUILD_DIR   ?=./build
+SRC_DIR     ?=./src
+OBJEXT      ?= o
+LTOBJEXT    ?= lo
+STLIBEXT    ?= a
+SHLIBEXT    ?= dll
+
+ARCHFLAGS ?=
+
+PREFIX      ?= /usr/local
+DESTDIR     ?=
+
+### no easily-user-serviceable parts below this line
+
+SRCS:=$(shell find $(SRC_DIR) -name *.cpp -or -name *.c)
+OBJS:=$(SRCS:%=$(BUILD_DIR)/%.$(OBJEXT))
+LTOBJS:=$(SRCS:%=$(BUILD_DIR)/%.$(LTOBJEXT))
+DEPS:=$(OBJS:.o=.d)
+
+$(BUILD_DIR)/%.c.o: %.c
+	$(MKDIR_P) $(dir $@)
+#	$(CC) $(CPPFLAGS) $(CFLAGS) $(ARCHFLAGS) -c $< -o $@
+	$(LIBTOOL) --mode=compile --tag=CC $(CC) $(CFLAGS) $(CPPFLAGS) $(ARCHFLAGS) -c $< -o $@
+
+$(BUILD_DIR)/%.cpp.o: %.cpp
+	$(MKDIR_P) $(dir $@)
+#	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(ARCHFLAGS) -c $< -o $@
+	$(LIBTOOL) --mode=compile --tag=CXX $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(ARCHFLAGS) -c $< -o $@
+
+#$(BUILD_DIR)/agnostic-test: $(OBJS)
+#	$(CXX) $(OBJS) -o $@ $(LDFLAGS)
+#
+#bin:	$(BUILD_DIR)/agnostic-test
+
+$(BUILD_DIR)/libagnostic.$(STLIBEXT): $(OBJS)
+	$(LIBTOOL) --mode=link $(CXX) -static $(ARCHFLAGS) -o $@ $(LTOBJS)
+
+$(BUILD_DIR)/libagnostic.$(SHLIBEXT): $(OBJS)
+#	$(CXX) $(SHLIBFLAGS) $(OBJS) -o $@
+	$(LIBTOOL) --mode=link $(CXX) -dynamic $(ARCHFLAGS) -o $@ $(LTOBJS)
+
+bin:	$(BUILD_DIR)/libagnostic.$(STLIBEXT)
+	#$(BUILD_DIR)/libagnostic.$(SHLIBEXT)
+
+doc:
+	doxygen
+
+all:	bin doc
+
+install:bin
+	install -d $(DESTDIR)$(PREFIX)/lib
+	install -m 644 $(BUILD_DIR)/libagnostic.$(STLIBEXT) $(DESTDIR)$(PREFIX)/lib/
+	install -d $(DESTDIR)$(PREFIX)/include/libagnostic
+	install -m 644 src/Filesystem.h $(DESTDIR)$(PREFIX)/include/libagnostic/
+	install -m 644 src/Timing.h $(DESTDIR)$(PREFIX)/include/libagnostic/
+
+.PHONY:	clean
+
+clean:
+	rm -rf build
+	rm -rf doc
