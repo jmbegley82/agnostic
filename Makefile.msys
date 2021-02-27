@@ -15,6 +15,7 @@ OBJEXT      ?= o
 LTOBJEXT    ?= lo
 STLIBEXT    ?= a
 SHLIBEXT    ?= dll
+EXE_EXT     ?= .exe
 
 ARCHFLAGS ?=
 
@@ -38,11 +39,6 @@ $(BUILD_DIR)/%.cpp.o: %.cpp
 #	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(ARCHFLAGS) -c $< -o $@
 	$(LIBTOOL) --mode=compile --tag=CXX $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(ARCHFLAGS) -c $< -o $@
 
-#$(BUILD_DIR)/agnostic-test: $(OBJS)
-#	$(CXX) $(OBJS) -o $@ $(LDFLAGS)
-#
-#bin:	$(BUILD_DIR)/agnostic-test
-
 $(BUILD_DIR)/libagnostic.$(STLIBEXT): $(OBJS)
 	$(LIBTOOL) --mode=link $(CXX) -static $(ARCHFLAGS) -o $@ $(LTOBJS)
 
@@ -50,7 +46,10 @@ $(BUILD_DIR)/libagnostic.$(SHLIBEXT): $(OBJS)
 #	$(CXX) $(SHLIBFLAGS) $(OBJS) -o $@
 	$(LIBTOOL) --mode=link $(CXX) -dynamic $(ARCHFLAGS) -o $@ $(LTOBJS)
 
-bin:	$(BUILD_DIR)/libagnostic.$(STLIBEXT)
+$(BUILD_DIR)/agnostic-test$(EXE_EXT): $(OBJS)
+	$(CXX) -Isrc/ $(OBJS) test/Test.cpp -o $@ $(LDFLAGS)
+
+bin:	$(BUILD_DIR)/libagnostic.$(STLIBEXT) $(BUILD_DIR)/agnostic-test$(EXE_EXT)
 	#$(BUILD_DIR)/libagnostic.$(SHLIBEXT)
 
 doc:

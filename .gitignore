@@ -33,3 +33,22 @@
 
 .DS*
 build
+.vs
+*.ruser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+[Dd]ebug/
+[Dd]ebug[Pp]ublic/
+[Rr]elease/
+[Rr]eleases/
+[Xx]86/
+[Xx]64/
+[Ww][Ii][Nn]32/
+[Ww][Ii][Nn]64/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
